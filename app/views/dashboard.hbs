@@ -1,26 +1,33 @@
-{{!-- <h2>Dashboard</h2>
-<h5>Hello, {{firstname}} {{lastname}}, you are logged in.</h5> --}}
-<!-- Image and text -->
-<!-- Image and text -->
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="./images/apple-touch-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Food No More
-  </a>
-</nav>
-<div class="container">
+<section>	
+		<div class="mainbox">
+			<div class="calsec">
+				<form action="/action_page.php">
+				 
+				  <input type="text" id="fname" name="firstname" placeholder="user types in food">
+				  <input type="submit" value="Submit">
+				  <br>
+				  <select id="food" name="food"></select>
+				  <br>
+				  <br>
+				  <label for="Portions">Number of portions:</label>
+				  <input type="text" id="Portions" name="lastname" placeholder="">
+			       <input type="submit" value="Add">
+				</form>
+			  </div>
+		</div>
+</section>	
 
-    <div class="row dashboardOne">
 
-
-    </div>
-    <div class="row dashboardTwo">
-
-    </div>
-    <div class="row dashboardThree">
-    
-     </div>
-
-     <a href="/logout">Logout</a>
-
-</div>
+<section>	
+        <div class="bottomleft">
+			<h2> 
+				Calories for the Day
+			</h2>
+			</div>
+        
+        <div class="bottomright">
+			<h2> 
+				Calories left for the Day
+            </h2>
+		</div>
+</section>
