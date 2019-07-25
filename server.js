@@ -29,7 +29,12 @@ app.set("views", "./app/views");
 app.engine("hbs", exphbs({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 
-
+app.get("/myfood", function(req, res) {
+	db.Food.findAll({}).then(function(dbData) {
+	  console.log(dbData);
+	});
+   });
+   
 
 //routes
 
