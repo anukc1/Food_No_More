@@ -8,6 +8,8 @@ var db = require("./app/models");
 var app = express();
 var PORT = process.env.PORT || 5000;
 
+app.use(express.static('app/public'))
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -27,13 +29,12 @@ app.set("views", "./app/views");
 app.engine("hbs", exphbs({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 
-app.get("/", function(req, res) {
-	res.send("Welcome to Passport with Sequlize");
-});
+
 
 //routes
-require("./app/routes/auth.js")(app, passport);
 
+require("./app/routes/auth.js")(app, passport);
+require('./app/routes/htmlRoutes.js')(app)
 //passport init
 require("./app/config/passport/passport.js")(passport, db.User);
 

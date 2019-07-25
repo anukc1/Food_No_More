@@ -1,7 +1,24 @@
-<form id="signin" name="signin" method="post" action="signin">
-    <label for="email">Email Address</label>
-    <input class="text" name="email" type="text" />
-    <label for="password">Password</label>
-    <input name="password" type="password" />
-    <input class="btn" type="submit" value="Sign In" />
-</form>
+<div class="container">
+    <div class="rowOne">
+        <div class="jumbotron">
+            <h1 class="display-4">Food No More</h1>
+            <div id="app-2">
+                <span v-bind:title="message">
+                    <p class="lead">Keep Track of how much your calorie input is and get on track.</p>
+                </span>
+
+            </div>
+            <hr class="my-4">
+
+        </div>
+
+        <div class="rowTwo">
+            <form id="signin" name="signin" method="post" action="signin">
+                <label for="email">Email Address</label>
+                <input class="text" name="email" type="text" />
+                <label for="password">Password</label>
+                <input name="password" type="password" />
+                <input class="btn" type="submit" value="Sign In" />
+            </form>
+
+        </div>
