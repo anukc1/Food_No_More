@@ -1,20 +1,34 @@
-$('.submit').on('click', function(event){
-event.preventDefault();
+// $("#signupSubmit").on("click", function(){
 
-//capture elements from from 
-//id of food
-//id of user
-// var foodInfo({userId: id of user, foodId: id food})
+//     var userData = {
+       
+//         firstname: $("#firstName").val().trim(),
+//         lastname: $("#LastName").val().trim(),
+//         email: $("#email").val().trim(),
+//         password: $("signUpPassword")
+//     };
 
+//     console.log(userData);
 
-
-//send an ajax requeste
-$.ajax({url: '/api/userfood', method: 'POST', data: foodInfo}).then(
-
-    function(){
+//     // send the user sign up information to back end.
+//     $.post("/api/", userData).then(function(data){
 
         
-    }
-)
+//     }) 
 
+
+
+// })
+
+
+
+
+// vue part---new technology-----
+    
+    var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
 })
+  
