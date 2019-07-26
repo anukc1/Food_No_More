@@ -29,16 +29,14 @@ app.set("views", "./app/views");
 app.engine("hbs", exphbs({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 
-app.get("/myfood", function(req, res) {
-	db.Food.findAll({}).then(function(dbData) {
-	  console.log(dbData);
-	});
-   });
+
    
 
 //routes
 
 require("./app/routes/auth.js")(app, passport);
+require("./app/routes/apiRoutes.js")(app);
+
 require('./app/routes/htmlRoutes.js')(app)
 //passport init
 require("./app/config/passport/passport.js")(passport, db.User);
