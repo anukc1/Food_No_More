@@ -14,6 +14,7 @@ module.exports = function(app) {
     });
   });
 
+
   app.get('/searchfood/:foodName', function(req, res) {
     var food = req.params.foodName;
     console.log(food);

@@ -1,5 +1,6 @@
 module.exports = function(sequelize, Sequelize){
     var UserFood = sequelize.define("UserFood",{
+
         firstname:{
             type: Sequelize.STRING,
             allowNull: false
@@ -17,6 +18,7 @@ module.exports = function(sequelize, Sequelize){
             allowNull: false
         },
         
+
     });
     return UserFood;
 };

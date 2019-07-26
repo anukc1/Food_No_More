@@ -1,4 +1,8 @@
-// $("#signupSubmit").on("click", function(){
+/////////////////////////////////////////////////////
+// sign-up
+/////////////////////////////////////////////////////
+$("#signupSubmit").on("click", function(){
+
 
 //     var userData = {
 
@@ -8,10 +12,11 @@
 //         password: $("signUpPassword")
 //     };
 
-//     console.log(userData);
+    console.log(userData);
 
-//     // send the user sign up information to back end.
-//     $.post("/api/", userData).then(function(data){
+    // send the user sign up information to back end.
+    $.post("/api/", userData).then(function(data){
+
 
 //     })
 
@@ -24,4 +29,5 @@ var app2 = new Vue({
   data: {
     message: 'You loaded this page on ' + new Date().toLocaleString()
   }
+
 });
