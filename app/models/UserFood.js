@@ -1,10 +1,11 @@
 module.exports = function(sequelize, Sequelize){
     var UserFood = sequelize.define("UserFood",{
-        firstname:{
+        firstname: {
             type: Sequelize.STRING,
-			allowNull: false
+            allowNull: false
         },
-        name:{
+        name: {
+
             type: Sequelize.STRING,
             allowNull: false
         },
@@ -15,9 +16,10 @@ module.exports = function(sequelize, Sequelize){
         kcal: {
             type: Sequelize.INTEGER,
             allowNull: false
+
         },
         
+
     });
     return UserFood;
-
 };
