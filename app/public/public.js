@@ -1,29 +1,30 @@
-// $("#signupSubmit").on("click", function(){
+/////////////////////////////////////////////////////
+// sign-up
+/////////////////////////////////////////////////////
+$("#signupSubmit").on("click", function(){
 
-//     var userData = {
+    var userData = {
        
-//         firstname: $("#firstName").val().trim(),
-//         lastname: $("#LastName").val().trim(),
-//         email: $("#email").val().trim(),
-//         password: $("signUpPassword")
-//     };
+        firstname: $("#firstName").val().trim(),
+        lastname: $("#LastName").val().trim(),
+        email: $("#email").val().trim(),
+        password: $("signUpPassword")
+    };
 
-//     console.log(userData);
+    console.log(userData);
 
-//     // send the user sign up information to back end.
-//     $.post("/api/", userData).then(function(data){
+    // send the user sign up information to back end.
+    $.post("/api/", userData).then(function(data){
 
         
-//     }) 
+    }) 
 
 
-
-// // })
-
-
-
-
-// vue part---new technology-----
+ })
+////////////////////////////////////////////////////////////////////////
+// vue
+////////////////////////////////////////////////////////////////////////
+ vue part---new technology-----
     
     var app2 = new Vue({
   el: '#app-2',
@@ -32,3 +33,4 @@
   }
 })
   
+//////////////////////////////////////////////////////////////////////////

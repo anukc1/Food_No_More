@@ -12,6 +12,12 @@ app.post("/api/userfood", function(req, res) {
       res.json(dbUserFood);
     });
   });
+  app.get("/searchfood/:foodName", function(req, res) {
+    var food = req.params.foodName
+    db.Food.findOne({food}).then(function(dbData) {
+      console.log(dbData);
+    });
+     });
   
   // Delete an example by id
   app.delete("/api/userfood/:id", function(req, res) {
