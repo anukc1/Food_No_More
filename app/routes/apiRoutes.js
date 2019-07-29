@@ -1,17 +1,25 @@
 var db = require('../models');
 var sequelize = require('sequelize');
 module.exports = function(app) {
-  app.post('/api/userfood', function(req, res) {
+  app.post('/fooddata/post', function(req, res) {
     console.log(req.body);
-    db.UserFood.create({
-      firstname: req.body.firstname,
-      name: req.body.name,
-      portions: req.body.portions,
-      kcal: req.body.kcal
-    }).then(function(dbUserFood) {
+    db.UserFood.create({userId: req.body.userId,
+    foodId: req.body.foodId}).then(function(dbUserFood) {
       res.json(dbUserFood);
     });
   });
+
+  app.put('/fooddata/post/:portions/:kcal', function(req, res) {
+    db.UserFood.update({
+      portions: req.params.portions,
+      kcal: req.params.kcal
+  },{where: {
+    id: req.body.id
+  }})
+    .then(function(updateFoodInfo) {
+      res.json(updateFoodInfo);
+    })
+  })
   app.get('/searchfood/:foodName', function(req, res) {
     var food = req.params.foodName;
     console.log("food in the api route: " +food);
@@ -29,6 +37,20 @@ module.exports = function(app) {
       res.render('results', {foodResults: dbData})
     });
   });
+
+
+  app.get('/dashboard/:userId?', function(req, res) {
+    var food = req.params.userId;
+    console.log("food in the api route: " +food);
+    db.UserFood.findAll({
+      where: {
+       userId: food
+      }, include: [db.Food]
+    }).then(function(dbData) {
+      console.log(dbData)
+      res.render('dashboard', {foodResults: dbData})
+    });
+  });
   // function updataCal(calOfFood){
   //   db.UserFood.up
   // }
@@ -41,5 +63,10 @@ module.exports = function(app) {
     });
   });
   //   db.push()
+
+  //  
+  
+
+
 };
 

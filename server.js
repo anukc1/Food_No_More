@@ -9,7 +9,6 @@ var app = express();
 var PORT = process.env.PORT || 5000;
 
 app.use(express.static('app/public'))
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -32,9 +31,7 @@ app.use(passport.session()); //allows persistent login sessions
 
 
 
-  
 //routes
-
 require("./app/routes/auth.js")(app, passport);
 require("./app/routes/apiRoutes.js")(app);
 require('./app/routes/htmlRoutes.js')(app)
