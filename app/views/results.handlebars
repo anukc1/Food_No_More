@@ -10,19 +10,16 @@
     </tr>
   </thead>
   <tbody>
+          {{#each foodResults}}
     <tr>
-      {{#each foodResults}}
       <td>{{name}}</td>
       <td>{{portions}}</td>
       <td>{{kcal}}</td>
       <td>
-        <button id="buttonAddFood"  data-id="{{id}}" class="btn btn-success addfood">Choose</button>
-        </td>
-     
+        <button data-id="{{id}}" class="btn btn-success addfood">Choose</button>
+      </td>
     </tr>
-     
-    {{/each}}
-
+          {{/each}}
   </tbody>
 </table>
 

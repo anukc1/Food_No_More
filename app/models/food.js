@@ -4,5 +4,6 @@ module.exports = function (sequelize, DataTypes) {
         portions: DataTypes.STRING,
         kcal: DataTypes.INTEGER
     });
+
      return Food;
 };

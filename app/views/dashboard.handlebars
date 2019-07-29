@@ -1,34 +1,71 @@
-<section class="selesec">	
-		<div class="mainbox">
-			<div class="calsec">
-				<h1>Welcome {{user.firstname}}</h1>
-				<form>
-				 
-				  <input type="text" data-userid="{{user.id}}" id="fname" placeholder="types of food">
-				  <input type="submit"  id="submitFoodSearch">
+<section class="container mt-5 bg-white">
+	<div class="col-12">
+		<h4 class="mb-5">Welcome {{user.firstname}}</h4>
+		<form>
+			<input class="btn-block btn-lg" type="text" data-userid="{{user.id}}" id="fname" placeholder="Search your favorite food here">
+			<input class="text-left btn btn-warning btn-lg my-3" type="submit" id="submitFoodSearch">
+		</form> 
 
-				  <br>
-				  <select id="food" name="food"></select>
-				  <br>
-				  <br>
-				  <label for="Portions">Number of portions:</label>
-				  <input type="text" id="Portions" name="lastname" placeholder="">
-			       <input type="submit" value="Add">
-				</form>
-			  </div>
-		</div>
-
-        <div class="bottomleft">
-			<h2> 
-				Calories for the Day
-			</h2>
-      <h3>1000<span class="calTheDay"></span></h3>
-			</div>
-        
-        <div class="bottomright">
-			<h2> 
-				Calories left for the Day
-            </h2>
-      <h3>1000<span class="calForDay"></span></h3>
-		</div>
+	</div>
 </section>
+
+
+<div class="container my-5 bg-white">
+    <div class="row clearfix">
+    	<div class="col-md-12 table-responsive bg-white">
+			<table class="table table-bordered table-hover table-sortable" id="tab_logic">
+				<thead>
+					<tr >
+						<th class="text-center">
+							Food Name
+						</th>
+						<th class="text-center">
+							KCal
+						</th>
+						<th class="text-center">
+							Portions
+						</th>
+    					<th class="text-center">
+							Total
+						</th>
+        				<th class="text-center" >
+						Confirm
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					{{#each foodResults}}
+		<tr id='addr0'>
+<td>{{Food.name}}</td>
+<td id="kcal">{{Food.kcal}}</td>
+<td data-name="sel">
+						    <select class="selectOneFood" name="sel0">
+        				        <option value="">Select Option</option>
+    					        <option value="1">Option 1</option>
+        				        <option value="2">Option 2</option>
+        				        <option value="3">Option 3</option>
+						    </select>
+							</td>
+						   <td id="totalCountCal">
+                          0
+                        </td>
+
+					
+						   <td class="text-right" data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+
+</tr>
+{{/each}}
+	
+                     
+
+
+    			
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<a id="add_row" class="btn btn-success float-right">Add more food</a>
+</div>
