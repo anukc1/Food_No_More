@@ -1,10 +1,11 @@
 <section class="selesec">	
 		<div class="mainbox">
 			<div class="calsec">
+				<h1>Welcome {{user.firstname}}</h1>
 				<form>
 				 
-				  <input type="text" id="fname" placeholder="types of food">
-				  <input type="submit"  id="Submit">
+				  <input type="text" data-userid="{{user.id}}" id="fname" placeholder="types of food">
+				  <input type="submit"  id="submitFoodSearch">
 
 				  <br>
 				  <select id="food" name="food"></select>

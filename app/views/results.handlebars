@@ -1,0 +1,30 @@
+<div class="container">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food Name</th>
+      <th scope="col">Portions</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {{#each foodResults}}
+      <td>{{name}}</td>
+      <td>{{portions}}</td>
+      <td>{{kcal}}</td>
+      <td>
+        <button id="buttonAddFood"  data-id="{{id}}" class="btn btn-success addfood">Choose</button>
+        </td>
+     
+    </tr>
+     
+    {{/each}}
+
+  </tbody>
+</table>
+
+
+</div>
