@@ -13,6 +13,12 @@ app.use(express.static('app/public'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+//set up handlebars
+app.set("views", "./app/views");
+app.engine("handlebars", exphbs({ defaultLayout: 'main' }));
+app.set("view engine", "handlebars");
+
 //for passport
 app.use(
 	session({
@@ -24,19 +30,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session()); //allows persistent login sessions
 
-//set up handlebars
-app.set("views", "./app/views");
-app.engine("hbs", exphbs({ extname: ".hbs" }));
-app.set("view engine", ".hbs");
 
 
-   
-
+  
 //routes
 
 require("./app/routes/auth.js")(app, passport);
 require("./app/routes/apiRoutes.js")(app);
-
 require('./app/routes/htmlRoutes.js')(app)
 //passport init
 require("./app/config/passport/passport.js")(passport, db.User);

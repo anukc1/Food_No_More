@@ -1,33 +1,21 @@
-/////////////////////////////////////////////////////
-// sign-up
-/////////////////////////////////////////////////////
-$("#signupSubmit").on("click", function(){
 
+$("#signupSubmit").on("click", function () {
 
-//     var userData = {
+  console.log(userData);
 
-//         firstname: $("#firstName").val().trim(),
-//         lastname: $("#LastName").val().trim(),
-//         email: $("#email").val().trim(),
-//         password: $("signUpPassword")
-//     };
+  // send the user sign up information to back end.
+  $.post("/api/", userData).then(function (data) {
 
-    console.log(userData);
+  })
 
-    // send the user sign up information to back end.
-    $.post("/api/", userData).then(function(data){
-
-
-//     })
-
-// // })
+})
 
 // vue part---new technology-----
 
-var app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString()
-  }
+// var app2 = new Vue({
+//   el: '#app-2',
+//   data: {
+//     message: 'You loaded this page on ' + new Date().toLocaleString()
+//   }
 
-});
+// });
