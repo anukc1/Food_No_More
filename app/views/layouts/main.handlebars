@@ -72,16 +72,23 @@ var userId = localStorage.getItem('userId');
 
   })
 
+var totalCal = 0;
+$('#tab_logic #addr0').each(function() {
+totalCal +=  parseInt($(this).find("#kcal").html());
 
-$(".selectOneFood" ).on("change", function() {
+$("#totalCountReal").text(totalCal)
+ });
+
+
+
+//$(".addr0 tr" ).each( "click", ".selectOneFood", function() {
+
+// var totalCal = $(this).find("minirow").html()
+//alert(totalCal );
   
 
- var totalCal =  $("#tab_logic").find("#kcal").html()
-alert(totalCal );
-  
 
-
-});
+//});
 
   </script>
 </body>
