@@ -39,6 +39,8 @@
   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  
   <script>
 
   $("#submitFoodSearch").on('click', function(event){
@@ -79,7 +81,12 @@ totalCal +=  parseInt($(this).find("#kcal").html());
 $("#totalCountReal").text(totalCal)
  });
 
-
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
+})
 
 //$(".addr0 tr" ).each( "click", ".selectOneFood", function() {
 
@@ -89,6 +96,8 @@ $("#totalCountReal").text(totalCal)
 
 
 //});
+
+
 
   </script>
 </body>
