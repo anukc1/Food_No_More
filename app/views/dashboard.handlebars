@@ -1,72 +1,77 @@
-<section class="container mt-5 bg-white">
-	<div class="col-12">
-		<h4 class="mb-5">Welcome {{user.firstname}}</h4>
-		<form>
-			<input class="btn-block btn-lg" type="text" data-userid="{{user.id}}" id="fname" placeholder="Search your favorite food here">
-			<input class="text-left btn btn-warning btn-lg my-3" type="submit" id="submitFoodSearch">
-		</form> 
+<div class="container bigBox">
+	<section class="rowOne mt-5 bg-white">
+		<div class="col-12">
+			<h4 class="mb-5">Welcome {{user.firstname}}</h4>
+			<form>
+				<input class="btn-block btn-lg" type="text" data-userid="{{user.id}}" id="fname"
+					placeholder="Search your favorite food here">
+				<input class="text-left btn btn-warning btn-lg my-3" type="submit" id="submitFoodSearch">
+			</form>
 
-	</div>
-</section>
-
-
-<div class="container my-5 bg-white">
-    <div class="row clearfix">
-    	<div class="col-md-12 table-responsive bg-white">
-			<table class="table table-bordered table-hover table-sortable" id="tab_logic">
-				<thead>
-					<tr >
-						<th class="text-center">
-							Food Name
-						</th>
-						<th class="text-center">
-							KCal
-						</th>
-						<th class="text-center">
-							Portions
-						</th>
-    					<th class="text-center">
-							Total
-						</th>
-        				<th class="text-center" >
-						Confirm
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					{{#each foodResults}}
-		<tr id='addr0' class="hidden">
-<td>{{Food.name}}</td>
-<td id="kcal">{{Food.kcal}}</td>
-<td data-name="sel">
-						    <select class="selectOneFood" name="sel0">
-        				        <option value="">Select Option</option>
-    					        <option value="1">Option 1</option>
-        				        <option value="2">Option 2</option>
-        				        <option value="3">Option 3</option>
-						    </select>
-							</td>
-						   <td id="totalCountCal">
-                          0
-                        </td>
-
-					
-						   <td class="text-right" data-name="del">
-                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
-                        </td>
-
-</tr>
-{{/each}}
-	
-                     
-
-
-    			
-				</tbody>
-			</table>
-			<h1 id="totalCountReal"></h1>
 		</div>
+	</section>
+
+
+	<div class="rowTwo my-5 bg-white">
+		<div class="row clearfix">
+			<div class="col-md-12 table-responsive bg-white">
+				<table class="table table-bordered table-hover table-sortable" id="tab_logic">
+					<thead>
+						<tr>
+							<th class="text-center">
+								Food Name
+							</th>
+							<th class="text-center">
+								KCal
+							</th>
+							<th class="text-center">
+								Portions
+							</th>
+							<th class="text-center">
+								Total
+							</th>
+							<th class="text-center">
+								Confirm
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						{{#each foodResults}}
+						<tr id='addr0' class="hidden">
+							<td>{{Food.name}}</td>
+							<td id="kcal">{{Food.kcal}}</td>
+							<td data-name="sel">
+								<select class="selectOneFood" name="sel0">
+									<option value="">Select Option</option>
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+									<option value="3">Option 3</option>
+								</select>
+							</td>
+							<td id="totalCountCal">
+								0
+							</td>
+
+
+							<td class="text-right" data-name="del">
+								<button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span
+										aria-hidden="true">×</span></button>
+							</td>
+
+						</tr>
+						{{/each}}
+
+
+
+
+
+					</tbody>
+				</table>
+				<h1 id="totalCountReal"></h1>
+			</div>
+		</div>
+		<a id="add_row" class="btn btn-success float-right">Add more food</a>
 	</div>
-	<a id="add_row" class="btn btn-success float-right">Add more food</a>
+
 </div>
